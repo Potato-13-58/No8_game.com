@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex, nofollow">
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ニュースの時間です - test版</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="menu">
+    <h1>🎮 ニュースの時間です</h1>
+    <button id="onlineBtn" class="top-right-btn">オンライン</button>
+    <p>プレイ人数を入力（2〜6人）:</p>
+    <input type="number" id="playerCount" min="2" max="6" value="2">
+    <br>
+    <button onclick="goToNameInput()">ゲームスタート</button>
+  </div>
+
+  <div id="nameInput" class="hidden">
+    <h2>👤 プレイヤー名を入力</h2>
+    <div id="nameFields" class="name-inputs"></div>
+    <button onclick="proceedFromNameInput()">次へ進む</button>
+  </div>
+
+  <div id="casterSelectionScreen" class="hidden">
+    <h2>ニュースキャスターを選択</h2>
+    <select id="casterSelect"></select>
+    <button onclick="confirmCasterSelection()">決定</button>
+  </div>
+
+  <div id="rouletteScreen" class="hidden">
+    <h2>🎲 ニュースキャスターを決定中...</h2>
+    <div class="roulette" id="rouletteText">？？？</div>
+    <button id="stopBtn" class="hidden">ストップ</button>
+    <button id="startBtn" class="hidden" onclick="startTurnOrder()">スタート</button>
+  </div>
+
+  <div id="turnScreen" class="hidden">
+    <h2>🔢 順番確認</h2>
+    <div id="turnOrder"></div>
+    <button onclick="dealCards()">次へ</button>
+  </div>
+
+  <div id="cardScreen" class="hidden">
+    <h2>🃏 単語カード配布</h2>
+    <div id="playerCards" class="card-inputs"></div>
+    <button onclick="nextPlayerTurn()" id="nextTurnBtn">次の人にターンを渡す</button>
+    <button onclick="showScript()" id="showScriptBtn" class="hidden">カンペを表示</button>
+  </div>
+
+  <div id="gameScreen" class="hidden">
+    <h2>📜 ゲーム開始</h2>
+    <div id="scriptText"></div>
+    <button onclick="startInsertPhase()" id="gameStartBtn">ゲームスタート</button>
+  </div>
+
+  <div id="insertScreen" class="hidden">
+    <h2>✍️ 単語カードを差し込む</h2>
+    <div id="insertCards" class="card-inputs"></div>
+    <div id="insertScript" class="drop-area"></div>
+    <button onclick="submitInsert()">送信</button>
+  </div>
+
+  <div id="waitingScreen" class="hidden">
+    <h2>カンペができました</h2>
+    <div id="waitingScript"></div>
+    <button onclick="showRevealPhase()">次へ</button>
+  </div>
+
+  <div id="revealScreen" class="hidden">
+    <h2>📖 本番用意！スタート！！</h2>
+  </div>
+
+  <div id="resultScreen" class="hidden">
+    <h2>🏆 結果判定</h2>
+    <div id="resultVotes" class="name-inputs"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

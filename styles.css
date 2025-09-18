@@ -1,0 +1,230 @@
+body {
+  font-family: sans-serif;
+  background: #121212;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  transition: background 0.5s ease;
+}
+
+body.news-background {
+  background: url('news-studio.jpg') no-repeat center center fixed; /* ローカルJPEG画像 */
+  background-size: cover;
+  position: relative;
+}
+
+body.news-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2 {
+  position: relative;
+  z-index: 1;
+}
+
+#menu {
+  position: relative; /* オンラインボタンを右上に配置するため */
+}
+
+input[type="text"], input[type="number"] {
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  border: none;
+  margin: 10px;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+  transform: scale(1.5); /* チェックボックスを少し大きく */
+}
+
+button {
+  background: #00b894;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.top-right-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4500; /* オレンジ色で目立たせる */
+  border: none;
+  padding: 8px 16px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.top-right-btn:hover {
+  background: #e03e00; /* ホバー時の色変化 */
+}
+
+.name-inputs, .card-inputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.roulette {
+  font-size: 2.5em;
+  margin-top: 40px;
+  height: 2em;
+  position: relative;
+  z-index: 1;
+}
+
+.card-button {
+  background: #ffffff;
+  color: #333;
+  margin: 5px;
+  padding: 15px 20px;
+  cursor: move;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 5px rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  width: 120px;
+  height: 70px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  border: 3px solid #1e90ff;
+  font-size: 1.2em;
+  background-image: linear-gradient(45deg, #f0f0f0 25%, #ffffff 25%, #ffffff 75%, #f0f0f0 75%);
+  background-size: 20px 20px;
+}
+
+.card-revealed {
+  background: #ffffff;
+  color: #333;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 200px;
+  min-width: 200px;
+  height: 50px;
+  font-size: 0.9em;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.drop-area, #scriptText, #waitingScript, #revealScreen {
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(51, 51, 51, 0.8);
+  border-radius: 8px;
+  font-size: 1.5em;
+  line-height: 1.6;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  white-space: pre-wrap;
+}
+
+#scriptText .blank-placeholder {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+}
+
+.drop-zone {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  background: #555;
+  margin: 5px;
+  border-radius: 8px;
+  vertical-align: middle;
+  line-height: 60px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.drop-zone.dragover {
+  background: #ff4500;
+}
+
+.drop-zone.filled {
+  background: #ffffff;
+  color: #333;
+  border: 2px solid #1e90ff;
+  cursor: move;
+  width: 200px;
+  height: 60px;
+  font-size: 0.9em;
+  line-height: 60px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.blank-button {
+  display: inline-block;
+  width: 200px;
+  min-width: 200px;
+  height: 50px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 1.5em;
+  border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#resultVotes {
+  font-size: 2em;
+  padding: 20px;
+}
+
+#resultVotes select {
+  font-size: 2em;
+  padding: 15px;
+  margin: 10px;
+}
+
+#resultMessage {
+  font-size: 2.5em;
+  margin-top: 20px;
+  font-weight: bold;
+}
